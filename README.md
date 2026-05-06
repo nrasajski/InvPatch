@@ -1,32 +1,20 @@
-# Overview
-All models (Global Embedding Modules, Action Decoder etc.) are in the ``models`` folder.
+# InvPatch
+This project contains the code used in the paper InvPatch: Prefix-Based Conditional Generation for Inverse Dynamics. 
+The experiments were conducted on a Linux system. The total size of all datasets when pre-processed is aroud 2TB.
+Experiments were run on a single A6000 GPU.
 
-Each dataset has a dedicated training folder containing additional custom dataset-specific logic and stored training artifacts.
-* MUGEN: ``idm_mugen``
-* BIMACS: ``idm_bimacs``
 
-Despite these differences, all follow the same training pipeline.
+## Project structure
+All the code for downloading and pre-processing the datasets 
+used in the paper is contained within the ``dataset_preprocessing`` folder.
+For detailed instructions, refer to the README file for each dataset.
+ 
+The IDM code is located in the ``idm`` folder, with detailed instructions in its README file.
 
-# Training
+## Getting started
 
-## 0) Prepare environment and data
-All necessary libraries are specified in ``requirements.txt`` file in project root
+All necessary libraries are specified in ``requirements.txt`` file in root of this project. 
 
-Data should be downloaded and pre-processed according to instructions in ``dataset_preprocessing``.
+## Maintenance
 
-Open a terminal window and position to ``PROJECT_ROOT/InvPatch/idm``
-
-## 1) Create train and test splits
-To create train-test splits set path to processed data, split ratio, save path and execute:
-
-`python -m IDM_FOLDER.split_data`
-
-## 2) Prepare experiment configurations
-File ``exp_configurations.py`` holds the definitions of all experimental configurations. 
-Each configuration is a python dictionary of hyperparameters and model configurations. Configurations can be grouped into arrays.
-
-## 3) Start experiments
-In file ``train_and_eval_idm.py`` set ``PROJECT_ROOT``.
-To train and evaluate trained IDM run:
-
-`python -m IDM_FOLDER.train_and_eval_idm`
+This repo shares code used for academic research, it's not production ready (robust across operating systems, python versions, python packages etc.). There's no plan to actively maintain this repo for these purposes, nor to fix minor bugs.
