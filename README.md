@@ -1,8 +1,11 @@
-# InvPatch
+# InvPatch: Prefix-Based Conditional Generation for Inverse Dynamics IEEE CAI 2026
 This project contains the code used in the paper InvPatch: Prefix-Based Conditional Generation for Inverse Dynamics. 
 The experiments were conducted on a Linux system. The total size of all datasets when pre-processed is aroud 2TB.
 Experiments were run on a single A6000 GPU.
 
+|                              |                               |
+|:----------------------------:|:-----------------------------:|
+| ![GIF 1](./assets/mugen.gif) | ![GIF 2](./assets/bimacs.gif) |
 
 ## Project structure
 All the code for downloading and pre-processing the datasets 
